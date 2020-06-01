@@ -27,7 +27,7 @@ arrests_fmt %>%
   filter(year >= 1980, year <= 2014) %>% 
   mutate(year = as.factor(year)) %>%
   ggplot(aes(x = year, y = arrests_pct, group = which)) +
-  geom_line(aes(col = which), size=1.2) + 
+  geom_line(aes(col = which), size=1.5) + 
   scale_color_manual(values = brewer.pal(8,"Set1")) + 
   scale_y_continuous(labels = function(x) paste0(sprintf("%.0f", x*100),"%"), limits = c(0, 0.15), breaks = seq(0, 0.14, by = 0.02)) + 
   labs(y="Percentage", x = "Year", caption = "Source: US Dept of Justice - https://www.bjs.gov/") + 
